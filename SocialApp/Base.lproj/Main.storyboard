@@ -72,6 +72,9 @@
                                     <constraint firstAttribute="width" constant="125" id="pzZ-JQ-FRw"/>
                                 </constraints>
                                 <state key="normal" image="f"/>
+                                <connections>
+                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="23r-el-wof"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S0i-nP-gct">
                                 <rect key="frame" x="46" y="365" width="228" height="112"/>
@@ -86,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="40" width="228" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnE-pJ-MWk" customClass="FancyBtn" customModule="SocialApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="228" height="32"/>
@@ -95,6 +98,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signAnyBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1R8-kO-JYV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -118,10 +124,51 @@
                             <constraint firstItem="BRb-w7-sAL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xNH-AO-Yuk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="WuC-7d-xhm" id="NR3-wM-lVn"/>
+                        <outlet property="passwordField" destination="odn-Ha-nvj" id="6oL-BX-f4c"/>
+                        <segue destination="RGw-i7-GCe" kind="show" identifier="FeedVC" id="jzn-xG-cKM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.375" y="33.802816901408448"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="Mr4-0L-dWc">
+            <objects>
+                <viewController id="RGw-i7-GCe" customClass="FeedVC" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lpC-2D-aO1"/>
+                        <viewControllerLayoutGuide type="bottom" id="vzj-bf-Jjw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R9T-Vx-dhB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDM-jo-8GV">
+                                <rect key="frame" x="130.5" y="269" width="60" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutBtnTapped:" destination="RGw-i7-GCe" eventType="touchUpInside" id="0GS-Me-OOa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UDM-jo-8GV" firstAttribute="centerY" secondItem="R9T-Vx-dhB" secondAttribute="centerY" id="0fd-io-k2O"/>
+                            <constraint firstItem="UDM-jo-8GV" firstAttribute="centerX" secondItem="R9T-Vx-dhB" secondAttribute="centerX" id="Rby-nU-09p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SignInVC" id="64j-aY-XXF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Lk-8h-Bck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804.375" y="38.028169014084504"/>
         </scene>
     </scenes>
     <resources>
